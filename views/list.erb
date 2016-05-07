@@ -1,0 +1,27 @@
+<h2>Список файлов:</h2>
+
+<table>
+  <tr>
+    <th>Скачать</th>
+    <th>Загружен</th>
+    <th>Удалить</th>
+  </tr>
+
+  <% @files.each do |file| %>
+
+  <tr>
+    <td><a href="/<%= file.id %>" title="<%= file.filename %>"><%= file.filename %></a></td>
+    <td><%= file.created_at.strftime("%d %b") if file.created_at %></td>
+    <td><a href="/<%= file.id %>/delete" title="Удалить файл">Удалить</a></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<h3>Добавить</h3>
+
+<form    name="new_file"  id="new_file"       method="POST" enctype="multipart/form-data">
+  <input type="file"      name="file"/><br>
+  <input type="submit"    value="Загрузить"/>
+</form>
