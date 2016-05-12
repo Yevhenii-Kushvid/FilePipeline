@@ -1,0 +1,9 @@
+!!!
+%html{xmlns: "http://www.w3.org/1999/xhtml"}
+  %head
+    %title Файлообменник имени меня
+    %meta{ :"http-equip" => "content-type", :"content" => "text/http;charset=UTF-8" }
+  %body
+    .main
+      = yield
+    %script{ :type => "text/javascript", :src => "/file_pipeline.js" }
